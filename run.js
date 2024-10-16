@@ -20,6 +20,9 @@ const chalk = require('chalk');
     
     // Dumping data
     const data = await bot.dump_data();
+    
+    console.log(chalk.blue(`[!] Data Found : ${data.length}\n`));
+
     for (let i = 0; i < data.length; i++) {
         
         const name = data[i].name;
@@ -33,10 +36,10 @@ const chalk = require('chalk');
             .then(res => {
                 res.body.pipe(fs.createWriteStream(`./data/${filename}.jpg`))
             })
-            console.log(chalk.green(`[+] Downloading => ${filename}.jpg`));
+            console.log(chalk.green(`[+] ${i+1}. Downloading => ${filename}.jpg`));
             
         } else {
-            console.log(chalk.red(`[-] Skipping => ${filename}.jpg`));
+            console.log(chalk.red(`[-] ${i+1}. Skipping => ${filename}.jpg`));
             
         }
 
