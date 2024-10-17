@@ -1,4 +1,4 @@
-const Dumper = require('./source/index.js');
+const Dumper = require('./src/index.js');
 const bot = new Dumper();
 
 const fetch = require('node-fetch');
